@@ -36,6 +36,15 @@ body
 	margin:10px auto 10px auto;
 	color:#65350A;
 }
+#left .s a
+{
+	display:block;
+	padding:20px 5px 20px 5px;
+	text-decoration:none;
+	background:#85f7a0;
+	margin:10px auto 10px auto;
+	color:#014d0a;
+}
 .ct
 {
 	text-align:center;
@@ -67,8 +76,8 @@ body
 }
 .all td
 {
-	min-width:100px;
-	padding:10px;
+	min-width:80px;
+	padding:5px;
 }
 .tt
 {
@@ -103,6 +112,14 @@ input[type=text],input[type=password]
 .s
 {
 	display:none;
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+	top: 20px;
+	left: 150px;
+}
+div.ww{
+	position: relative;
 }
 div.ww:hover > div.s
 {
