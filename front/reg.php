@@ -63,7 +63,7 @@
             if (parseInt(chk) == 1 || info.acc == "admin") {
                 alert("帳號重複");
             } else {
-                $.post("api/add_user.php", info, () => {
+                $.post("api/save_user.php", info, () => {
                     location.href = "?do=login";
                 })
             }

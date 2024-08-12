@@ -12,12 +12,12 @@
     foreach ($rows as $row) {
     ?>
         <tr class="pp ct">
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><?= $row['name']; ?></td>
+            <td><?= $row['acc']; ?></td>
+            <td><?= $row['regdate']; ?></td>
             <td>
-                <button>修改</button>
-                <button>刪除</button>
+                <button onclick="location.href='?do=edit_user&id=<?= $row['id']; ?>'">修改</button>
+                <button onclick="del('Mem',<?= $row['id']; ?>)">刪除</button>
             </td>
         </tr>
     <?php
