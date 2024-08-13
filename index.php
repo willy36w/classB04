@@ -16,6 +16,22 @@ include_once "./api/base.php";
 
 <body>
     <iframe name="back" style="display:none;"></iframe>
+    <!-- <style>
+        #cart {
+            position: relative;
+        }
+
+        .cart-info {
+            width: 200px;
+            height: 300px;
+            overflow: auto;
+            border: 1px solid #999;
+            box-shadow: 1px 1px 10px #999;
+            position: absolute;
+            background: white;
+            display: none;
+        } -->
+    </style>
     <div id="main">
         <div id="top">
             <a href="?">
@@ -25,7 +41,11 @@ include_once "./api/base.php";
                 <a href="?">回首頁</a> |
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
-                <a href="?do=buycart">購物車</a> |
+                <a href="?do=buycart" id="cart">購物車</a> |
+                <!-- 購物車JQ位置查詢語法 -->
+                <!-- $("#cart").offset(),查詢(一)
+                     $("#cart").position(),查詢(二)
+                {top: 83.25, left: 818.09375} -->
                 <?php
                 if (isset($_SESSION['Mem'])) {
                     echo "<a href='./api/logout.php?user=mem'>登出</a> |";
@@ -88,7 +108,39 @@ include_once "./api/base.php";
         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
             <?= $Bottom->find(1)['bottom']; ?></div>
     </div>
-
+    <div class="cart-info">
+        <div class="goods-list"></div>
+        <div class="goods-total"></div>
+    </div>
 </body>
 
 </html>
+<script>
+    // $("#cart").hover(
+    //     function() {
+    //         let pos = $("#cart").offset();
+    //         $(".cart-info").css({
+    //             top: pos.top + 40,
+    //             left: pos.left - 70
+    //         });
+    //         $.get("api/get_cart.php", function(cart) {
+    //             let data = JSON.parse(cart);
+    //             let list = '';
+    //             data.list.forEach(goods => {
+    //                 let total = goods.
+    //                 list += `<div class = 'list-item'>
+    //                 <div>${goods.name}</div>
+    //                 <div>${goods.qt}</div>
+    //                 <div>${goods.price*goods.qt}</div>
+    //                 </div>`;
+    //             })
+    //             $(".good-list").html(list);
+    //             $(".good-total").html(data.total);
+    //             $(".cart-info").toggle();
+    //         })
+    //     },
+    //     function() {
+    //         $(".cart-info").toggle();
+    //     }
+    // )
+</script>

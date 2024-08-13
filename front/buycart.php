@@ -48,8 +48,12 @@ if (!empty($_SESSION['cart'])) {
         ?>
     </table>
     <div class="ct">
-        <img src="./icon/0411.jpg" alt="" onclick="location.href='index.php'">
-        <img src="./icon/0412.jpg" alt="" onclick="location.href='?do=checkout'">
+        <a href="index.php">
+            <img src="./icon/0411.jpg" alt="">
+        </a>
+        <a href="?do=checkout">
+            <img src="./icon/0412.jpg" alt="">
+        </a>
     </div>
 <?php
 

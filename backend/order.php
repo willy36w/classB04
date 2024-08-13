@@ -10,17 +10,21 @@
         <td>操作</td>
     </tr>
     <?php
-    $rows = $Mem->all();
+    $rows = $Order->all();
     foreach ($rows as $row) {
     ?>
         <tr class="pp ct">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
             <td>
-                <button>刪除</button>
+                <a href='?do=detail&id=<?= $row['id']; ?>'>
+                    <?= $row['no']; ?>
+                </a>
+            </td>
+            <td><?= $row['total']; ?></td>
+            <td><?= $row['acc']; ?></td>
+            <td><?= $row['name']; ?></td>
+            <td><?= $row['orderdate']; ?></td>
+            <td>
+                <button onclick="del('Order',<?= $row['id']; ?>)">刪除</button>
             </td>
         </tr>
     <?php
